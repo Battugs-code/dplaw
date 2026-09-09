@@ -1,0 +1,257 @@
+{
+  "brand": "Dashnyam Partners LLC",
+  "nav": {
+    "home": "Home",
+    "our_people": "Our people",
+    "areas_of_practice": "Areas of Practice",
+    "resources": "Resources",
+    "resources_news": "News",
+    "resources_legal_update": "Legal Update",
+    "resources_archived_legal_update": "Archived Legal Update",
+    "resources_laws": "Laws",
+    "resources_foreign_investment": "Official Source for Foreign Investment",
+    "resources_lexub": "LEXUB",
+    "resources_itgemj": "ITGEMJ INITIATIVE",
+    "pro_bono": "Pro Bono",
+    "pro_bono_social_impact": "Pro Bono and Our Social Impact",
+    "pro_bono_requirements": "Pro Bono requirements",
+    "contact_us": "Contact us",
+    "language_selector": "Select your language"
+  },
+  "home": {
+    "hero_line1": "Focus, awareness, commitment",
+    "hero_line2": "and practical advice tailored for your success",
+    "why_us_heading": "Why us",
+    "why_us_intro": "Our industry leading expertise has been built on our core values to put our clients at the heart of all we do and provide innovative and practical solutions suited for our clients’ needs accurately, swiftly, efficiently and with accountability",
+    "mission_title": "Our Mission",
+    "mission_text": "We help our clients succeed while holding ourselves to the highest ethical and professional standards. We work with diligence, accountability, honesty and integrity. We work as a team for the benefit of our clients and we do so with consideration and respect for the well being of all persons.",
+    "community_title": "Our Community",
+    "community_text": "Our roots are at the heart of Mongolia, and we are devoted to its future. Dashnyam Partners, as individuals and as a firm, strongly believe in the value of community development. We encourage our people to use their legal knowledge and other professional skills to promote positive impact in our local community.",
+    "values": [
+      {
+        "key": "innovative",
+        "title": "Innovative",
+        "text": "We find fresh and creative solutions for exceptional circumstances which carry uncertainty, complexity and rigidity."
+      },
+      {
+        "key": "caring",
+        "title": "Caring",
+        "text": "We value our relationships with our clients and don’t view the end of a transaction as the end of our relationship."
+      },
+      {
+        "key": "communicative",
+        "title": "Communicative",
+        "text": "We communicate with our clients and others with respect and courtesy. No question or query is incremental and is responded to swiftly with the highest level of thought and care."
+      },
+      {
+        "key": "experienced",
+        "title": "Experienced",
+        "text": "Our vast experience is accumulated from dealing with both original problems which has allowed us to expand our expertise and common problems which has allowed us to perfect our craft."
+      },
+      {
+        "key": "experts",
+        "title": "Experts",
+        "text": "Continually producing outstanding results for our clients by applying our experience, expertise and awareness of our clients’ background, interests and commercial needs to our advice."
+      },
+      {
+        "key": "leaders",
+        "title": "Leaders",
+        "text": "Our firm has become a leading example within the legal industry and has set the bar for both our competitors and upcoming law firms."
+      },
+      {
+        "key": "responsible",
+        "title": "Responsible",
+        "text": "We strongly embrace our corporate social responsibility and invest in our society through our pro bono services and other non-profit initiatives."
+      },
+      {
+        "key": "recognized",
+        "title": "Recognized",
+        "text": "Our firm is continuously ranked a Band One/Two law firm by Chambers and Partners Asia Pacific with our own Zoljargal Dashnyam ranked a leading lawyer since 2011."
+      }
+    ],
+    "news_heading": "Legal updates & News",
+    "awards_heading": "Awards"
+  },
+  "people_page": {
+    "heading": "Our people"
+  },
+  "practice": {
+    "heading": "Areas of Practice",
+    "anchor_menu": [
+      "Corporate and M&A",
+      "Finance & Capital Markets",
+      "Projects",
+      "Commerce & Real Estate",
+      "Litigation & Arbitration"
+    ],
+    "areas": [
+      {
+        "id": "corporate",
+        "name": "Corporate and M&A",
+        "services": [
+          "Corporate Governance",
+          "Commercial Activities",
+          "Equity Capital Markets",
+          "Joint Ventures",
+          "Private Equity",
+          "Mergers and Acquisitions",
+          "Corporate Disputes",
+          "Public Procurement and Competitive Tendering"
+        ]
+      },
+      {
+        "id": "finance",
+        "name": "Finance & Capital Markets",
+        "services": [
+          "Asset Finance",
+          "Asset Management",
+          "General Lending",
+          "Project Finance",
+          "Debt Capital Markets",
+          "Derivatives and Structured Finance",
+          "Equity Capital Markets"
+        ]
+      },
+      {
+        "id": "projects",
+        "name": "Projects",
+        "services": [
+          "Energy",
+          "Mining",
+          "Oil and Gas",
+          "Engineering, Procurement and Construction (EPC)",
+          "Infrastructure and Transport"
+        ]
+      },
+      {
+        "id": "commerce",
+        "name": "Commerce & Real Estate",
+        "services": [
+          "Commerce",
+          "Real Estate Construction",
+          "Leasing",
+          "Real Estate Development and Planning",
+          "Real Estate Finance and Workouts",
+          "Real Estate Investments, Joint Ventures and Structures",
+          "Real Estate Securitisation",
+          "Real Estate Tax"
+        ]
+      },
+      {
+        "id": "litigation",
+        "name": "Litigation & Arbitration",
+        "services": [
+          "Commercial and Contract Disputes",
+          "Employment Disputes",
+          "Energy Disputes",
+          "Investment Disputes",
+          "Restructuring and Insolvency Litigation",
+          "Arbitration"
+        ]
+      }
+    ],
+    "testimonials_heading": "Testimonials",
+    "testimonials": [
+      {
+        "name": "Ganbayar.Ts",
+        "role": "Deputy Chief Executive Officer of the Trade and Development Bank",
+        "text": "We believe that the staff of “DB&GTS\" LLP provides professional legal advice at a high level of professionalism and is one of the top law firm and lawyers in Mongolia recognized by foreign and domestic stock exchanges."
+      },
+      {
+        "name": "Erkhembayar.B",
+        "role": "Banker (now Deputy Chief Executive Officer of Transbank )",
+        "text": "\"DB & GTS LLP’s lawyers are highly professional, maintaining business confidentiality and working promptly, and provide clients with orderly and valuable advice\""
+      },
+      {
+        "name": "Takeo Kato",
+        "role": "CEO of New Ulaanbaatar International Airport LLC",
+        "text": "*“DB&GTS” LLP has been committed to protecting the Company's rights and legitimate interests by providing effective solutions to any disputes arising in state and local governments and courts*"
+      },
+      {
+        "name": "Unengerel.Ch",
+        "role": "Director of International Financial Institutions, Treasury Division of Golomt Bank",
+        "text": "In the past, “DB&GTS” LLP provided legal advice and due diligence services on financing agreements to attract foreign and domestic resources, and have performed the work assigned during the cooperation period in a short period of time with high quality and skills."
+      },
+      {
+        "name": "Amarbayasgalan. D",
+        "role": "Chief Legal Counsel of Oyu Tolgoi LLC",
+        "text": "“DB&GTS” LLP have become one of the trusted partners that provides legal advice with professional research, ground, and conclusions within the framework of legislation and standard application on any complex issues in a short period of time in accordance with our business activities and our needs."
+      },
+      {
+        "name": "Gantulga. B",
+        "role": "Chief Executive Officer of Mongolian Mortgage Corporation HFC LLC",
+        "text": "We believe that “DB&GTS” LLP has a lot of experience in the domestic and foreign stock markets and is a skilled team that does any work on time."
+      }
+    ]
+  },
+  "resources": {
+    "news_heading": "News",
+    "legal_update_heading": "Legal Update",
+    "archived_heading": "Archived Legal Update",
+    "empty": "No posts yet."
+  },
+  "pro_bono": {
+    "heading": "PRO BONO AND OUR SOCIAL IMPACT",
+    "sub": "We are proud of our commitment to community investment and the rule of law",
+    "paragraphs": [
+      "Our pro bono work and social initiatives carries the same level of importance and urgency to our billable work. The aim of our pro bono work and social initiatives is to support access to justice and help people understand their rights and interests under the law.",
+      "Our commitment is shared amongst our whole team which includes the Managing Partner to our paralegals. Most recently, a team comprised of our Managing Partner, an associate and paralegal fought for a disabled child’s human right to access education. We did not stop there, we are now working towards releasing a series of publications on the steps parents or guardians may take in similar situations.",
+      "We want to make a real impact and where possible we collaborate with peers and other organizations to enhance our social impact.",
+      "Other examples of our social impact and reach include:"
+    ]
+  },
+  "pro_bono_req": {
+    "heading": "Pro Bono requirements",
+    "form": {
+      "name_label": "Name of Applicant:",
+      "address_label": "Address of Applicant:",
+      "category_label": "Indicate category of service by checking appropriate box below:",
+      "submit": "Submit"
+    },
+    "categories": [
+      "LEGAL SERVICE PROVIDER",
+      "GOVERNMENT SERVICE",
+      "LAW SCHOOL SPONSORED PROGRAM",
+      "OTHER"
+    ],
+    "notes": [
+      "Pro bono work must be law-related and supervised by an attorney, judge, or law school faculty or instructor in order to qualify.",
+      "Pro Bono work abroad can also qualify as law-related and properly supervised. You will be asked to explain the nature and circumstances of the work in detail.",
+      "Pro bono work at a law firm can qualify as long as no fee is being paid, and the work is duly supervised and law related."
+    ],
+    "success": "Thank you. Your application has been noted."
+  },
+  "contact": {
+    "heading": "Contact us",
+    "local_time_label": "Local time",
+    "address_label": "Address",
+    "address": "Suite #903, Regis Place Tower, Chinggis Avenue - 33/2 15th Khoroo, Khan-Uul District, Ulaanbaatar 17011, Mongolia",
+    "get_direction": "Get direction",
+    "phone_label": "Tel",
+    "email_label": "Email"
+  },
+  "footer": {
+    "disclaimer_heading": "Disclaimer",
+    "disclaimer": "The information provided on this website does not constitute legal or other advice and is only intended to be used for general information purposes. Legal updates, news articles and other content on this website are accurate to its specific publication date and may not reflect current legislation or events. For any update or detailed information or advice, please feel free to contact us at info@dplaw.mn. Dashnyam Partner LLC shall not be liable or responsible in any way for any losses incurred by the use or reliance on any information provided on this website.",
+    "address_heading": "Address",
+    "address": "Suite #903, Regis Place Tower, Chinggis Avenue - 33/2 15th Khoroo, Khan-Uul District, Ulaanbaatar 17011, Mongolia",
+    "links_heading": "Link",
+    "copyright": "Copyright 2026 Dashnyam Partners LLC Developed by gerege.agency"
+  },
+  "ui": {
+    "read_more": "Read more",
+    "view_all": "View all",
+    "back": "Back",
+    "back_to_people": "Back to our people",
+    "back_to_news": "Back to news",
+    "back_to_updates": "Back to legal updates",
+    "download_pdf": "Download PDF",
+    "menu": "Menu",
+    "close": "Close",
+    "not_found_title": "Page not found",
+    "not_found_text": "The page you are looking for does not exist or has been moved.",
+    "not_found_cta": "Go to homepage",
+    "required": "required",
+    "skip_to_content": "Skip to content"
+  }
+}

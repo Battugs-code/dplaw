@@ -1,0 +1,44 @@
+@import "tailwindcss";
+
+@theme {
+  --color-crimson: #a61d30;
+  --color-crimson-dark: #840b1d;
+  --color-crimson-soft: #f6ecee;
+  --color-ink: #22252a;
+  --color-body: #4c4a48;
+  --color-muted: #857f7b;
+  --color-cream: #faf8f7;
+  --color-line: #ece6e2;
+  --color-night: #1b1517;
+  --color-night-soft: #2a2124;
+}
+
+@theme inline {
+  --font-sans: var(--font-roboto), Arial, Helvetica, sans-serif;
+  --font-display: var(--font-poppins), var(--font-roboto), Arial, Helvetica, sans-serif;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background: #ffffff;
+  color: var(--color-body);
+  font-family: var(--font-sans);
+  text-rendering: optimizeLegibility;
+}
+
+::selection {
+  background: var(--color-crimson);
+  color: #fff;
+}
+
+:focus-visible {
+  outline: 2px solid var(--color-crimson);
+  outline-offset: 2px;
+}
+
+.tabular {
+  font-variant-numeric: tabular-nums;
+}
