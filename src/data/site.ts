@@ -45,6 +45,16 @@ export const contactInfo = {
   mapUrl: "https://goo.gl/maps/SxpcECEU4kSoMcYdA",
 };
 
+export const practiceImages: Record<string, string> = {
+  corporate: "/images/Corporate-2-min-scaled-a644f7.jpg",
+  finance: "/images/Finance-and-Capital-Markets-min-1-scaled-ff7ae5.jpg",
+  projects: "/images/Projct-2-bcac47.jpg",
+  commerce: "/images/Real-estate-min-scaled-978fb7.jpg",
+  litigation: "/images/Litigation-scaled-2c47d0.jpg",
+};
+
+export const contactBgImage = "/images/regis-place-night.jpg";
+
 export const externalLinks = {
   laws: "https://legalinfo.mn/",
   foreignInvestment: "http://nda.gov.mn/backend/f/2019.pdf",

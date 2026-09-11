@@ -13,7 +13,7 @@ export default function NotFound() {
       <p className="mt-3 max-w-md text-body">{t("not_found_text")}</p>
       <Link
         href="/"
-        className="mt-8 rounded-sm bg-crimson px-7 py-3 text-sm font-semibold uppercase tracking-wide text-white transition-colors hover:bg-crimson-dark"
+        className="mt-8 bg-crimson px-7 py-3 text-sm font-semibold uppercase tracking-wide text-white transition-colors hover:bg-crimson-dark"
       >
         {t("not_found_cta")}
       </Link>

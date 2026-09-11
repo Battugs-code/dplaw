@@ -1,6 +1,5 @@
 import { getTranslations, setRequestLocale } from "next-intl/server";
 import Image from "@/components/common/Image";
-import PageHeader from "@/components/site/PageHeader";
 import Reveal from "@/components/site/Reveal";
 import ProBonoForm from "@/components/ProBonoForm";
 
@@ -13,38 +12,39 @@ export default async function ProBonoRequirementsPage({
   const notes = t.raw("notes") as string[];
 
   return (
-    <>
-      <PageHeader title={t("heading")} />
-      <section className="mx-auto max-w-4xl px-5 py-16 sm:px-8 lg:py-20">
+    <section className="mx-auto max-w-[1300px] px-5 py-14 sm:px-8 lg:py-16">
+      <Reveal>
+        <h1 className="font-display text-2xl font-bold text-ink sm:text-3xl">
+          {t("heading")}
+        </h1>
+      </Reveal>
+
+      <div className="mt-10 grid gap-10 lg:grid-cols-[420px_1fr]">
         <Reveal>
-          <div className="relative aspect-[16/7] overflow-hidden rounded-md bg-cream">
+          <div className="relative aspect-[4/3] overflow-hidden bg-soft">
             <Image
               src="/images/Image-65-0fa364.png"
               alt=""
               fill
-              sizes="(min-width:1024px) 896px, 100vw"
+              sizes="(min-width:1024px) 420px, 100vw"
               className="object-cover"
             />
           </div>
         </Reveal>
-
-        <Reveal>
-          <div className="mt-10">
-            <ProBonoForm />
+        <Reveal delay={0.05}>
+          <div className="space-y-4 leading-relaxed text-body">
+            {notes.map((n, i) => (
+              <p key={i}>{n}</p>
+            ))}
           </div>
         </Reveal>
+      </div>
 
-        <Reveal>
-          <ul className="mt-10 space-y-4">
-            {notes.map((n, i) => (
-              <li key={i} className="flex gap-3 leading-relaxed text-body">
-                <span className="mt-[10px] h-1.5 w-1.5 shrink-0 rounded-full bg-crimson" aria-hidden />
-                <span>{n}</span>
-              </li>
-            ))}
-          </ul>
-        </Reveal>
-      </section>
-    </>
+      <Reveal>
+        <div className="mt-12">
+          <ProBonoForm />
+        </div>
+      </Reveal>
+    </section>
   );
 }

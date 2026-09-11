@@ -1,7 +1,6 @@
 "use client";
 
 import { useEffect, useState } from "react";
-import { Clock } from "lucide-react";
 
 export default function LocalTime({ label }: { label: string }) {
   const [now, setNow] = useState<Date | null>(null);
@@ -23,18 +22,10 @@ export default function LocalTime({ label }: { label: string }) {
     : "--:--:--";
 
   return (
-    <div className="rounded-md border border-line bg-white p-7">
-      <div className="flex items-center gap-3">
-        <span className="flex h-10 w-10 items-center justify-center rounded-sm bg-crimson-soft text-crimson">
-          <Clock className="h-5 w-5" />
-        </span>
-        <h2 className="font-display text-lg font-semibold text-ink">{label}</h2>
-      </div>
-      <p className="tabular mt-4 font-display text-3xl font-semibold text-ink">
+    <div className="text-white">
+      <h2 className="font-display text-2xl font-semibold">{label}</h2>
+      <p className="mt-4 font-display text-6xl font-bold tabular-nums tracking-tight sm:text-7xl">
         {time}
-      </p>
-      <p className="mt-1 text-xs uppercase tracking-widest text-muted">
-        Ulaanbaatar, Mongolia
       </p>
     </div>
   );

@@ -3,14 +3,12 @@
 @theme {
   --color-crimson: #a61d30;
   --color-crimson-dark: #840b1d;
-  --color-crimson-soft: #f6ecee;
-  --color-ink: #22252a;
-  --color-body: #4c4a48;
-  --color-muted: #857f7b;
-  --color-cream: #faf8f7;
-  --color-line: #ece6e2;
-  --color-night: #1b1517;
-  --color-night-soft: #2a2124;
+  --color-ink: #232323;
+  --color-body: #555555;
+  --color-muted: #999999;
+  --color-soft: #f7f7f7;
+  --color-footer: #f0f2f0;
+  --color-line: #eeeeee;
 }
 
 @theme inline {
@@ -37,8 +35,4 @@ body {
 :focus-visible {
   outline: 2px solid var(--color-crimson);
   outline-offset: 2px;
-}
-
-.tabular {
-  font-variant-numeric: tabular-nums;
 }

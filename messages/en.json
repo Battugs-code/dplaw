@@ -236,7 +236,8 @@
     "address_heading": "Address",
     "address": "Suite #903, Regis Place Tower, Chinggis Avenue - 33/2 15th Khoroo, Khan-Uul District, Ulaanbaatar 17011, Mongolia",
     "links_heading": "Link",
-    "copyright": "Copyright 2026 Dashnyam Partners LLC Developed by gerege.agency"
+    "copyright": "Copyright 2026 Dashnyam Partners LLC",
+    "developed_by": "Developed by"
   },
   "ui": {
     "read_more": "Read more",
@@ -252,6 +253,8 @@
     "not_found_text": "The page you are looking for does not exist or has been moved.",
     "not_found_cta": "Go to homepage",
     "required": "required",
-    "skip_to_content": "Skip to content"
+    "skip_to_content": "Skip to content",
+    "vcard_download": "Vcard Download",
+    "suggested_news": "Suggested news"
   }
 }

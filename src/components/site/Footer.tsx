@@ -1,51 +1,51 @@
 import { useTranslations } from "next-intl";
 import { Link } from "@/i18n/navigation";
-import { externalLinks, logoUrl } from "@/data/site";
+import { externalLinks } from "@/data/site";
 
 export default function Footer() {
   const t = useTranslations("footer");
   const tNav = useTranslations("nav");
 
   return (
-    <footer className="border-t-2 border-crimson bg-night text-sm text-white/70">
-      <div className="mx-auto grid max-w-7xl gap-10 px-5 py-14 sm:px-8 md:grid-cols-[1.4fr_1fr_0.7fr]">
+    <footer className="border-t border-line bg-footer text-body">
+      <div className="mx-auto grid max-w-[1300px] gap-10 px-5 py-12 sm:px-8 md:grid-cols-[1.4fr_1fr_0.7fr]">
         <div>
-          <h2 className="font-display text-lg font-semibold text-white">
+          <h2 className="font-display text-[15px] font-semibold text-ink">
             {t("disclaimer_heading")}
           </h2>
-          <p className="mt-4 max-w-prose text-[13px] leading-relaxed text-white/60">
+          <p className="mt-3 max-w-prose text-[13px] leading-relaxed">
             {t("disclaimer")}
           </p>
         </div>
         <div>
-          <h2 className="font-display text-lg font-semibold text-white">
+          <h2 className="font-display text-[15px] font-semibold text-ink">
             {t("address_heading")}
           </h2>
-          <p className="mt-4 max-w-xs text-[13px] leading-relaxed text-white/60">
+          <p className="mt-3 max-w-xs text-[13px] leading-relaxed">
             {t("address")}
           </p>
-          <p className="mt-3 text-[13px] text-white/60">
+          <p className="mt-2 text-[13px]">
             <a
               href="mailto:info@dplaw.mn"
-              className="transition-colors hover:text-white"
+              className="transition-colors hover:text-crimson"
             >
               info@dplaw.mn
             </a>
           </p>
         </div>
         <div>
-          <h2 className="font-display text-lg font-semibold text-white">
+          <h2 className="font-display text-[15px] font-semibold text-ink">
             {t("links_heading")}
           </h2>
-          <ul className="mt-4 space-y-2 text-[13px]">
+          <ul className="mt-3 space-y-2 text-[13px]">
             <li>
               <a
                 href={externalLinks.gowu}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="transition-colors hover:text-white"
+                className="transition-colors hover:text-crimson"
               >
-                GOWU <span aria-hidden>↗</span>
+                GOWU
               </a>
             </li>
             <li>
@@ -53,25 +53,32 @@ export default function Footer() {
                 href={externalLinks.lexub}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="transition-colors hover:text-white"
+                className="transition-colors hover:text-crimson"
               >
-                LEXUB <span aria-hidden>↗</span>
+                LEXUB
               </a>
             </li>
             <li>
-              <Link href="/" className="transition-colors hover:text-white">
+              <Link href="/" className="transition-colors hover:text-crimson">
                 {tNav("resources_itgemj")}
               </Link>
             </li>
           </ul>
         </div>
       </div>
-      <div className="border-t border-white/10">
-        <div className="mx-auto flex max-w-7xl flex-wrap items-center justify-between gap-3 px-5 py-5 text-[12px] text-white/50 sm:px-8">
-          <p>{t("copyright")}</p>
-          {/* eslint-disable-next-line @next/next/no-img-element */}
-          <img src={logoUrl ?? ""} alt="" className="h-7 w-auto opacity-70 invert" />
-        </div>
+      <div className="mx-auto flex max-w-[1300px] flex-wrap items-center justify-between gap-2 px-5 pb-8 pt-2 text-[13px] font-medium text-ink sm:px-8">
+        <p>{t("copyright")}</p>
+        <p>
+          {t("developed_by")}{" "}
+          <a
+            href="https://gerege.agency"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-crimson transition-colors hover:text-crimson-dark"
+          >
+            gerege.agency
+          </a>
+        </p>
       </div>
     </footer>
   );

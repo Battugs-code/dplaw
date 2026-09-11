@@ -30,9 +30,23 @@
 - Custom 404 page, focus-visible rings, skip-to-content, semantic HTML, per-page metadata
 
 ## Design tokens (same base as original)
-- Crimson `#a61d30` / dark `#840b1d` (original theme color), ink `#22252a`, cream `#faf8f7`, night `#1b1517`
-- Fonts: Poppins (headings) + Roboto (body) — same as original theme; Cyrillic falls back to Roboto (same as original)
+- Crimson `#a61d30` / dark `#840b1d` (original theme color), ink `#232323`, body `#555`, muted `#999`, soft `#f7f7f7`, footer `#f0f2f0`, line `#eee`
+- Fonts: Poppins (headings/nav) + Roboto (body) — same as original theme; Cyrillic falls back to Roboto (same as original)
 - Tailwind v4 tokens in `src/app/globals.css`
+
+## Fidelity pass (second iteration)
+After comparing against the live original page-by-page, the design was brought back to the original's visual character:
+- Header: sentence-case Poppins nav, "Select your language" bordered pill, taller header — like the original
+- Hero: single photo (copy.png), moderate left-aligned sentence-case headline, no buttons — like the original
+- Homepage sections use the original photo backgrounds (MG_8695-59 for Why us, 3-2_3 and MG_8700-64_2 for the values) with the original dark translucent rounded cards
+- News cards: square corners, thin border, semibold dark title, date bottom-right — like the original
+- People: photo + white caption block cards; profile pages use the original round photo, gray role, blue Vcard Download link (real .vcf files generated)
+- Areas of Practice: original zig-zag photo/text layout with the 5 area photos, centered uppercase anchor menu, plain disc bullets
+- Resources: centered uppercase tabs with crimson underline; article pages have centered title + gray date + Suggested news grid — like the original
+- Pro Bono requirements: image left + notes right, thin-input form with red asterisks
+- Contact: original Regis Place night photo background, big white local-time clock, white contact card with red/green/blue icon circles, outline Get direction button
+- Footer: light gray (#f0f2f0) with Disclaimer/Address/Link and "Developed by gerege.agency" — like the original
+Kept UX improvements: sticky header, working dropdowns, mobile menu, locale switcher preserving path, hover/focus states, all news on one page, back links, 404, semantic HTML, per-page metadata.
 
 ## Content model (ready for erxes CMS later)
 - `src/data/people.ts` — 10 people (en content + mn/ru name & role)

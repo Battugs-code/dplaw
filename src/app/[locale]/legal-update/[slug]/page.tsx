@@ -29,28 +29,26 @@ export default async function LegalUpdateArticlePage({
   const index = all.findIndex((p) => p.slug === slug);
   if (index === -1) notFound();
   const post = all[index];
+  const isArchived = archivedUpdates.some((p) => p.slug === slug);
+  const suggested = all.filter((_, i) => i !== index).slice(0, 3);
 
   // Group consecutive list items into <ul>
-  const blocks: { type: string; text: string }[] = post.content;
   const rendered: React.ReactNode[] = [];
   let list: string[] = [];
   const flushList = (key: string) => {
     if (list.length) {
       const items = list;
       rendered.push(
-        <ul key={key} className="space-y-2 pl-1">
+        <ul key={key} className="list-disc space-y-2 pl-5 marker:text-crimson">
           {items.map((li, j) => (
-            <li key={j} className="flex gap-3">
-              <span className="mt-[11px] h-1.5 w-1.5 shrink-0 rounded-full bg-crimson" aria-hidden />
-              <span>{li}</span>
-            </li>
+            <li key={j}>{li}</li>
           ))}
         </ul>
       );
       list = [];
     }
   };
-  blocks.forEach((b, i) => {
+  post.content.forEach((b, i) => {
     if (b.type === "list_item") {
       list.push(b.text);
       return;
@@ -58,10 +56,7 @@ export default async function LegalUpdateArticlePage({
     flushList(`ul-${i}`);
     if (b.type === "heading") {
       rendered.push(
-        <h2
-          key={`h-${i}`}
-          className="pt-4 font-display text-2xl font-semibold text-ink"
-        >
+        <h2 key={`h-${i}`} className="pt-3 font-display text-xl font-semibold text-ink">
           {b.text}
         </h2>
       );
@@ -73,27 +68,24 @@ export default async function LegalUpdateArticlePage({
 
   return (
     <ArticleShell
-      backHref="/resources/legal-update"
-      backLabel={t("back_to_updates")}
+      activeTab={isArchived ? "archived" : "legal-update"}
       date={post.date}
       title={post.title}
-      image={post.image}
-      siblingHrefPrefix="/legal-update"
-      prev={index > 0 ? all[index - 1] : null}
-      next={index < all.length - 1 ? all[index + 1] : null}
+      suggested={suggested}
+      suggestedHrefPrefix="/legal-update"
     >
       {rendered.map((node, i) => (
         <Fragment key={i}>{node}</Fragment>
       ))}
       {post.pdfs && post.pdfs.length > 0 ? (
-        <div className="not-prose pt-4">
+        <div className="pt-3">
           {post.pdfs.map((pdf, i) => (
             <a
               key={pdf}
               href={pdf}
               target="_blank"
               rel="noopener noreferrer"
-              className="mb-3 inline-flex items-center gap-2 rounded-sm border border-crimson px-5 py-2.5 text-sm font-semibold uppercase tracking-wide text-crimson transition-colors hover:bg-crimson hover:text-white"
+              className="mb-3 mr-3 inline-flex items-center gap-2 border border-crimson px-5 py-2.5 text-sm font-semibold text-crimson transition-colors hover:bg-crimson hover:text-white"
             >
               <FileDown className="h-4 w-4" />
               {t("download_pdf")}

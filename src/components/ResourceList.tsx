@@ -1,9 +1,7 @@
 import { getTranslations } from "next-intl/server";
 import Image from "@/components/common/Image";
 import { Link } from "@/i18n/navigation";
-import PageHeader from "@/components/site/PageHeader";
 import Reveal from "@/components/site/Reveal";
-import { ArrowUpRight } from "lucide-react";
 import { externalLinks } from "@/data/site";
 import clsx from "clsx";
 
@@ -16,6 +14,90 @@ export type ResourceListItem = {
 
 type Tab = "news" | "legal-update" | "archived";
 
+export function ResourceTabs({ active }: { active: Tab }) {
+  return <ResourceTabsInner active={active} />;
+}
+
+async function ResourceTabsInner({ active }: { active: Tab }) {
+  const t = await getTranslations("resources");
+  const tNav = await getTranslations("nav");
+
+  const tabs: { key: Tab | "laws"; label: string; href: string; external?: boolean }[] = [
+    { key: "news", label: t("news_heading"), href: "/resources/news" },
+    { key: "legal-update", label: t("legal_update_heading"), href: "/resources/legal-update" },
+    { key: "archived", label: t("archived_heading"), href: "/resources/archived-legal-update" },
+    { key: "laws", label: tNav("resources_laws"), href: externalLinks.laws, external: true },
+  ];
+
+  return (
+    <nav
+      aria-label="Resources"
+      className="flex flex-wrap items-center justify-center gap-x-8 gap-y-2 px-5"
+    >
+      {tabs.map((tab) =>
+        tab.external ? (
+          <a
+            key={tab.key}
+            href={tab.href}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="border-b-2 border-transparent py-2 font-display text-[13px] font-semibold uppercase tracking-wide text-ink transition-colors hover:text-crimson"
+          >
+            {tab.label}
+          </a>
+        ) : (
+          <Link
+            key={tab.key}
+            href={tab.href}
+            aria-current={tab.key === active ? "page" : undefined}
+            className={clsx(
+              "border-b-2 py-2 font-display text-[13px] font-semibold uppercase tracking-wide transition-colors",
+              tab.key === active
+                ? "border-crimson text-crimson"
+                : "border-transparent text-ink hover:text-crimson"
+            )}
+          >
+            {tab.label}
+          </Link>
+        )
+      )}
+    </nav>
+  );
+}
+
+export function ResourceCard({
+  item,
+  hrefPrefix,
+}: {
+  item: ResourceListItem;
+  hrefPrefix: string;
+}) {
+  return (
+    <Link
+      href={`${hrefPrefix}/${item.slug}`}
+      className="group flex h-full flex-col border border-line bg-white transition-shadow duration-300 hover:shadow-[0_6px_20px_rgba(0,0,0,0.08)]"
+    >
+      <div className="relative aspect-[16/10] overflow-hidden bg-soft">
+        <Image
+          src={item.image}
+          alt={item.title}
+          fill
+          sizes="(min-width:1024px) 25vw, (min-width:640px) 50vw, 100vw"
+          className="object-cover"
+        />
+      </div>
+      <div className="flex flex-1 flex-col p-5">
+        <h2 className="line-clamp-4 font-display text-[16px] font-semibold leading-snug text-ink transition-colors group-hover:text-crimson">
+          {item.title}
+        </h2>
+        <time className="mt-auto pt-4 text-right text-[13px] text-muted">
+          {item.date}
+        </time>
+      </div>
+    </Link>
+  );
+}
+
 export default async function ResourceList({
   active,
   items,
@@ -26,22 +108,6 @@ export default async function ResourceList({
   hrefPrefix: string;
 }) {
   const t = await getTranslations("resources");
-  const tNav = await getTranslations("nav");
-
-  const tabs: { key: Tab; label: string; href: string }[] = [
-    { key: "news", label: t("news_heading"), href: "/resources/news" },
-    {
-      key: "legal-update",
-      label: t("legal_update_heading"),
-      href: "/resources/legal-update",
-    },
-    {
-      key: "archived",
-      label: t("archived_heading"),
-      href: "/resources/archived-legal-update",
-    },
-  ];
-
   const heading =
     active === "news"
       ? t("news_heading")
@@ -50,67 +116,16 @@ export default async function ResourceList({
         : t("archived_heading");
 
   return (
-    <>
-      <PageHeader title={heading} subtitle={tNav("resources")} />
-      <section className="mx-auto max-w-7xl px-5 py-14 sm:px-8 lg:py-16">
-        <Reveal>
-          <div className="flex flex-wrap items-center gap-2 border-b border-line pb-5">
-            {tabs.map((tab) => (
-              <Link
-                key={tab.key}
-                href={tab.href}
-                className={clsx(
-                  "rounded-sm px-4 py-2 text-[13px] font-semibold uppercase tracking-wide transition-colors",
-                  tab.key === active
-                    ? "bg-crimson text-white"
-                    : "text-body hover:bg-cream hover:text-crimson"
-                )}
-              >
-                {tab.label}
-              </Link>
-            ))}
-            <a
-              href={externalLinks.laws}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-flex items-center gap-1 rounded-sm px-4 py-2 text-[13px] font-semibold uppercase tracking-wide text-body transition-colors hover:bg-cream hover:text-crimson"
-            >
-              {tNav("resources_laws")}
-              <ArrowUpRight className="h-3.5 w-3.5" />
-            </a>
-          </div>
-        </Reveal>
-
-        <div className="mt-4 divide-y divide-line">
-          {items.map((item, i) => (
-            <Reveal key={item.slug} delay={Math.min(i, 6) * 0.05}>
-              <Link
-                href={`${hrefPrefix}/${item.slug}`}
-                className="group flex items-center gap-6 py-6 transition-colors"
-              >
-                <div className="relative hidden h-20 w-32 shrink-0 overflow-hidden rounded-sm bg-cream sm:block">
-                  <Image
-                    src={item.image}
-                    alt={item.title}
-                    fill
-                    sizes="128px"
-                    className="object-cover transition-transform duration-500 group-hover:scale-105"
-                  />
-                </div>
-                <div className="min-w-0 flex-1">
-                  <time className="tabular text-xs font-semibold uppercase tracking-widest text-crimson">
-                    {item.date}
-                  </time>
-                  <h2 className="mt-1.5 font-display text-xl font-semibold leading-snug text-ink transition-colors group-hover:text-crimson sm:text-2xl">
-                    {item.title}
-                  </h2>
-                </div>
-                <ArrowUpRight className="h-5 w-5 shrink-0 text-muted transition-all duration-300 group-hover:-translate-y-0.5 group-hover:translate-x-0.5 group-hover:text-crimson" />
-              </Link>
-            </Reveal>
-          ))}
-        </div>
-      </section>
-    </>
+    <section className="mx-auto max-w-[1300px] px-5 py-12 sm:px-8">
+      <h1 className="sr-only">{heading}</h1>
+      <ResourceTabs active={active} />
+      <div className="mt-10 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
+        {items.map((item, i) => (
+          <Reveal key={item.slug} delay={Math.min(i % 4, 3) * 0.06} className="h-full">
+            <ResourceCard item={item} hrefPrefix={hrefPrefix} />
+          </Reveal>
+        ))}
+      </div>
+    </section>
   );
 }

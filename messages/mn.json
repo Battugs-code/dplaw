@@ -236,7 +236,8 @@
     "address_heading": "Хаяг",
     "address": "Монгол улс, Улаанбаатар - 17011, Хан-Уул дүүрэг, 15-р хороо, Чингисийн өргөн чөлөө - 33/2, Рэжис Плэйс цамхаг, 903 тоот",
     "links_heading": "Холбоос",
-    "copyright": "Зохиогчийн эрх 2026 “Дашням Партнерс” ХХН"
+    "copyright": "Copyright 2026 Dashnyam Partners LLC",
+    "developed_by": "Хөгжүүлсэн"
   },
   "ui": {
     "read_more": "Дэлгэрэнгүй",
@@ -252,6 +253,8 @@
     "not_found_text": "Таны хайсан хуудас байхгүй эсвэл шилжүүлсэн байна.",
     "not_found_cta": "Нүүр хуудас руу очих",
     "required": "заавал",
-    "skip_to_content": "Агуулга руу шилжих"
+    "skip_to_content": "Агуулга руу шилжих",
+    "vcard_download": "Vcard татах",
+    "suggested_news": "Санал болгох мэдээ"
   }
 }

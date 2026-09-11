@@ -236,7 +236,8 @@
     "address_heading": "Адрес",
     "address": "Сьют #903, Реджис Плейс Тауэр, Чингис Проспект – 33/2, Хороо 15, Хан-Уул дүүрэг, Улан-Батор 17011, Монголия",
     "links_heading": "Ссылка",
-    "copyright": "Copyright 2026 Dashnyam Partners LLC"
+    "copyright": "Copyright 2026 Dashnyam Partners LLC",
+    "developed_by": "Разработано"
   },
   "ui": {
     "read_more": "Подробнее",
@@ -252,6 +253,8 @@
     "not_found_text": "Запрашиваемая страница не существует или была перемещена.",
     "not_found_cta": "На главную",
     "required": "обязательно",
-    "skip_to_content": "Перейти к содержимому"
+    "skip_to_content": "Перейти к содержимому",
+    "vcard_download": "Скачать визитку",
+    "suggested_news": "Рекомендуемые новости"
   }
 }

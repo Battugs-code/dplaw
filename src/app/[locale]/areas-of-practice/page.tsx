@@ -1,6 +1,8 @@
 import { getTranslations, setRequestLocale } from "next-intl/server";
-import PageHeader from "@/components/site/PageHeader";
+import Image from "@/components/common/Image";
 import Reveal from "@/components/site/Reveal";
+import { practiceImages } from "@/data/site";
+import clsx from "clsx";
 
 type Area = { id: string; name: string; services: string[] };
 type Testimonial = { name: string; role: string; text: string };
@@ -10,7 +12,6 @@ export default async function AreasOfPracticePage({
 }: PageProps<"/[locale]/areas-of-practice">) {
   const { locale } = await params;
   setRequestLocale(locale);
-  const tNav = await getTranslations("nav");
   const t = await getTranslations("practice");
   const areas = t.raw("areas") as Area[];
   const anchors = t.raw("anchor_menu") as string[];
@@ -18,73 +19,85 @@ export default async function AreasOfPracticePage({
 
   return (
     <>
-      <PageHeader title={tNav("areas_of_practice")} />
+      {/* Centered anchor menu like the original */}
+      <nav
+        aria-label="Practice areas"
+        className="mx-auto flex max-w-[1300px] flex-wrap justify-center gap-x-8 gap-y-2 px-5 pb-4 pt-12 sm:px-8"
+      >
+        {areas.map((a, i) => (
+          <a
+            key={a.id}
+            href={`#${a.id}`}
+            className="font-display text-[13px] font-semibold uppercase tracking-wide text-ink transition-colors hover:text-crimson"
+          >
+            {anchors[i] ?? a.name}
+          </a>
+        ))}
+      </nav>
 
-      <section className="mx-auto max-w-7xl px-5 py-16 sm:px-8 lg:py-20">
-        <div className="grid gap-12 lg:grid-cols-[260px_1fr]">
-          {/* Sticky anchor nav */}
-          <aside className="hidden lg:block">
-            <nav className="sticky top-28 space-y-1 border-l border-line" aria-label="Practice areas">
-              {areas.map((a, i) => (
-                <a
-                  key={a.id}
-                  href={`#${a.id}`}
-                  className="block py-2 pl-4 text-sm font-medium text-muted transition-colors hover:border-crimson hover:text-crimson"
-                >
-                  {anchors[i] ?? a.name}
-                </a>
-              ))}
-            </nav>
-          </aside>
-
-          <div className="space-y-16">
-            {areas.map((area, i) => (
+      <section className="mx-auto max-w-[1300px] px-5 py-10 sm:px-8">
+        <div className="space-y-16 lg:space-y-20">
+          {areas.map((area, i) => {
+            const flip = i % 2 === 1;
+            return (
               <Reveal key={area.id}>
-                <section id={area.id} className="scroll-mt-28">
-                  <h2 className="flex items-baseline gap-4 font-display text-2xl font-semibold tracking-tight text-ink sm:text-3xl">
-                    <span className="tabular text-sm font-semibold tracking-widest text-crimson">
-                      {String(i + 1).padStart(2, "0")}
-                    </span>
-                    {area.name}
-                  </h2>
-                  <ul className="mt-7 grid gap-x-10 gap-y-3 sm:grid-cols-2">
-                    {area.services.map((s) => (
-                      <li key={s} className="flex gap-3 border-b border-line pb-3 leading-relaxed text-body">
-                        <span className="mt-[10px] h-1.5 w-1.5 shrink-0 rounded-full bg-crimson" aria-hidden />
-                        <span>{s}</span>
-                      </li>
-                    ))}
-                  </ul>
+                <section
+                  id={area.id}
+                  className="grid scroll-mt-32 items-center gap-8 lg:grid-cols-2 lg:gap-14"
+                >
+                  <div
+                    className={clsx(
+                      "relative aspect-[4/3] overflow-hidden bg-soft",
+                      flip && "lg:order-2"
+                    )}
+                  >
+                    <Image
+                      src={practiceImages[area.id] ?? null}
+                      alt={area.name}
+                      fill
+                      sizes="(min-width:1024px) 50vw, 100vw"
+                      className="object-cover"
+                    />
+                  </div>
+                  <div className={flip ? "lg:order-1" : undefined}>
+                    <h2 className="font-display text-[22px] font-semibold text-ink">
+                      {area.name}
+                    </h2>
+                    <ul className="mt-5 list-disc space-y-2 pl-5 leading-relaxed text-body marker:text-ink">
+                      {area.services.map((s) => (
+                        <li key={s}>{s}</li>
+                      ))}
+                    </ul>
+                  </div>
                 </section>
               </Reveal>
-            ))}
-          </div>
+            );
+          })}
         </div>
       </section>
 
       {/* Testimonials */}
-      <section className="border-t border-line bg-cream">
-        <div className="mx-auto max-w-7xl px-5 py-16 sm:px-8 lg:py-24">
+      <section className="border-t border-line bg-soft">
+        <div className="mx-auto max-w-[1300px] px-5 py-16 sm:px-8 lg:py-20">
           <Reveal>
-            <h2 className="font-display text-3xl font-semibold tracking-tight text-ink sm:text-4xl">
+            <h2 className="text-center font-display text-2xl font-semibold text-muted sm:text-[28px]">
               {t("testimonials_heading")}
             </h2>
           </Reveal>
-          <div className="mt-12 grid gap-6 md:grid-cols-2 lg:grid-cols-3">
+          <div className="mt-10 grid gap-6 md:grid-cols-2 lg:grid-cols-3">
             {testimonials.map((tm, i) => (
-              <Reveal key={tm.name} delay={(i % 3) * 0.07} className="h-full">
-                <figure className="flex h-full flex-col rounded-md border border-line bg-white p-7">
-                  <span className="font-display text-5xl leading-none text-crimson" aria-hidden>
-                    &ldquo;
-                  </span>
-                  <blockquote className="mt-2 flex-1 text-[15px] leading-relaxed text-body">
+              <Reveal key={tm.name} delay={(i % 3) * 0.06} className="h-full">
+                <figure className="flex h-full flex-col border border-line bg-white p-6">
+                  <blockquote className="flex-1 text-sm leading-relaxed text-body">
                     {tm.text}
                   </blockquote>
-                  <figcaption className="mt-6 border-t border-line pt-4">
-                    <p className="font-display text-base font-semibold text-ink">
+                  <figcaption className="mt-5 border-t border-line pt-4">
+                    <p className="font-display text-[15px] font-semibold text-ink">
                       {tm.name}
                     </p>
-                    <p className="mt-1 text-xs leading-relaxed text-muted">{tm.role}</p>
+                    <p className="mt-0.5 text-[13px] leading-relaxed text-muted">
+                      {tm.role}
+                    </p>
                   </figcaption>
                 </figure>
               </Reveal>
